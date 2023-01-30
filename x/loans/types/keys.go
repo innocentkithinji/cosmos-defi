@@ -17,3 +17,8 @@ const (
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
+
+const (
+	LoansKey      = "Loans/value/"
+	LoansCountKey = "Loans/count/"
+)
