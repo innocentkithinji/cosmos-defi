@@ -3,15 +3,35 @@ package types
 import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
-	// this line is used by starport scaffolding # 1
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/msgservice"
 )
 
 func RegisterCodec(cdc *codec.LegacyAmino) {
+	cdc.RegisterConcrete(&MsgRequestLoan{}, "loans/RequestLoan", nil)
+	cdc.RegisterConcrete(&MsgApproveLoan{}, "loans/ApproveLoan", nil)
+	cdc.RegisterConcrete(&MsgRepayLoan{}, "loans/RepayLoan", nil)
+	cdc.RegisterConcrete(&MsgLiquidateLoan{}, "loans/LiquidateLoan", nil)
+	cdc.RegisterConcrete(&MsgCancelLoan{}, "loans/CancelLoan", nil)
 	// this line is used by starport scaffolding # 2
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgRequestLoan{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgApproveLoan{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgRepayLoan{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgLiquidateLoan{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgCancelLoan{},
+	)
 	// this line is used by starport scaffolding # 3
 
 	msgservice.RegisterMsgServiceDesc(registry, &_Msg_serviceDesc)

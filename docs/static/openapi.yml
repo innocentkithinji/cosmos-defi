@@ -75164,6 +75164,16 @@ definitions:
         type: string
       lender:
         type: string
+  loans.loans.MsgApproveLoanResponse:
+    type: object
+  loans.loans.MsgCancelLoanResponse:
+    type: object
+  loans.loans.MsgLiquidateLoanResponse:
+    type: object
+  loans.loans.MsgRepayLoanResponse:
+    type: object
+  loans.loans.MsgRequestLoanResponse:
+    type: object
   loans.loans.Params:
     type: object
     description: Params defines the parameters for the module.
