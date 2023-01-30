@@ -1,0 +1,7 @@
+syntax = "proto3";
+package loans.loans;
+
+option go_package = "loans/x/loans/types";
+
+// Msg defines the Msg service.
+service Msg {}
